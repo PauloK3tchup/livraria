@@ -18,5 +18,8 @@
         "titleBar.inactiveBackground": "#66001399",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#660013"
+    "peacock.color": "#660013",
+    "python.analysis.extraPaths": [
+        "./__pypackages__/3.10/lib"
+    ]
 }
