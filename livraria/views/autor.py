@@ -1,10 +1,18 @@
 from django.shortcuts import render
+
 from rest_framework.viewsets import ModelViewSet
 
-from livraria.models import Categoria, Editora, Autor, Livro
-from livraria.serializers import CategoriaSerializer, EditoraSerializer, AutorSerializer, LivroSerializer, LivroDetailSerializer, LivroListSerializer
+from livraria.models import Autor, Categoria, Editora, Livro
+from livraria.serializers import (
+    AutorSerializer,
+    CategoriaSerializer,
+    EditoraSerializer,
+    LivroDetailSerializer,
+    LivroListSerializer,
+    LivroSerializer,
+)
 
-    
+
 class AutorViewSet(ModelViewSet):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializer
