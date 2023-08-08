@@ -12,7 +12,9 @@ class Livro(models.Model):
         max_digits=7, decimal_places=2, default=0, null=True, blank=True
     )
 
-    categorias = models.ManyToManyField(Categoria, related_name="livros")
+    categoria = models.ForeignKey(
+        Categoria, on_delete=models.PROTECT, related_name="livros"
+    )
 
     editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name="livros"
