@@ -6,7 +6,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from livraria.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet
+from livraria.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet, CompraViewSet
 from uploader.router import router as uploader_router
 from usuario.router import router as usuario_router
 
@@ -19,6 +19,7 @@ from drf_spectacular.views import (
 router = DefaultRouter()
 router.register(r"autores", AutorViewSet)
 router.register(r"categorias", CategoriaViewSet)
+router.register(r"compras", CompraViewSet)
 router.register(r"editoras", EditoraViewSet)
 router.register(r"livros", LivroViewSet)
 
