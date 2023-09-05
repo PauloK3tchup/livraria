@@ -5,8 +5,8 @@ from livraria.models import Compra, ItensCompra
 class ItensCompraSerializer(ModelSerializer):
     total = SerializerMethodField()
     
-    def get_total(self, obj):
-        return obj.livro.preco * obj.quantidade
+    def get_total(self, instance):
+        return instance.livro.preco * instance.quantidade
 
     class Meta:
         model = ItensCompra
@@ -21,4 +21,4 @@ class CompraSerializer(ModelSerializer):
 
     class Meta:
         model = Compra
-        fields = "__all__"
+        fields = ("id", "usuario", "status", "total", "itens")
